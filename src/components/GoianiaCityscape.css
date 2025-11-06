@@ -1,0 +1,219 @@
+.cityscape {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8fafd 0%, #e8f0fc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cityscape::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(87, 128, 180, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cityscape::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(122, 159, 212, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cityscape-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.cityscape-header h2 {
+  font-size: 2.5rem;
+  color: #2d3e50;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.cityscape-header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.image-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 280px;
+}
+
+.image-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(87, 128, 180, 0.2);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.image-card:hover .image-wrapper img {
+  transform: scale(1.1) rotate(1deg);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(87, 128, 180, 0.9) 0%, rgba(64, 90, 143, 0.95) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  width: 100%;
+  color: white;
+  animation: slideUp 0.3s ease;
+}
+
+.overlay-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.overlay-content p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .images-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .image-card {
+    height: 240px;
+  }
+
+  .cityscape-header h2 {
+    font-size: 2rem;
+  }
+
+  .cityscape {
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .images-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .image-card {
+    height: 200px;
+  }
+
+  .cityscape-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .cityscape-header p {
+    font-size: 1rem;
+  }
+
+  .overlay-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .overlay-content p {
+    font-size: 0.8rem;
+  }
+
+  .cityscape {
+    padding: 40px 15px;
+  }
+
+  .cityscape::before {
+    display: none;
+  }
+
+  .cityscape::after {
+    width: 300px;
+    height: 300px;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .images-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-card {
+    height: 200px;
+  }
+
+  .cityscape-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .cityscape {
+    padding: 30px 10px;
+  }
+}
