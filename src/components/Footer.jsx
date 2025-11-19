@@ -1,90 +1,53 @@
 import { motion } from 'framer-motion';
+import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import logo from '../assets/LogoJTBranca.png';
 import './Footer.css';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <motion.footer
-      className="footer"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      <div className="footer-content">
-        <motion.div
-          className="footer-section"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3>JT Engenharia</h3>
-          <p>Soluções em Segurança do Trabalho com excelência e inovação.</p>
-        </motion.div>
-
-        <motion.div
-          className="footer-section"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
-        >
-          <h4>Links Rápidos</h4>
-          <ul>
-            <li><a href="#intro">Introdução</a></li>
-            <li><a href="#gallery">Galeria</a></li>
-            <li><a href="#clients">Clientes</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#contact">Contato</a></li>
-          </ul>
-        </motion.div>
-
-        <motion.div
-          className="footer-section"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <h4>Contato</h4>
-          <p>Email: contato@jtengenharia.com</p>
-          <p>Telefone: (62) 3000-0000</p>
-          <p>Endereço: Goiânia, GO</p>
-        </motion.div>
-
-        <motion.div
-          className="footer-section"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <h4>Redes Sociais</h4>
-          <div className="social-links">
-            <motion.a href="#" whileHover={{ scale: 1.1 }}>
-              Facebook
-            </motion.a>
-            <motion.a href="#" whileHover={{ scale: 1.1 }}>
-              Instagram
-            </motion.a>
-            <motion.a href="#" whileHover={{ scale: 1.1 }}>
-              LinkedIn
-            </motion.a>
+    <footer className="footer">
+      <div className="container">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <img src={logo} alt="JT Engenharia" className="footer-logo" />
+            <p>
+              Soluções completas em Engenharia de Segurança do Trabalho e Perícias.
+              Compromisso com a técnica e a vida.
+            </p>
+            <div className="social-links">
+              <a href="#" aria-label="Facebook"><FaFacebook /></a>
+              <a href="#" aria-label="Instagram"><FaInstagram /></a>
+              <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
+              <a href="#" aria-label="WhatsApp"><FaWhatsapp /></a>
+            </div>
           </div>
-        </motion.div>
-      </div>
 
-      <motion.div
-        className="footer-bottom"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        viewport={{ once: true }}
-      >
-        <p>&copy; {currentYear} JT Engenharia. Todos os direitos reservados.</p>
-      </motion.div>
-    </motion.footer>
+          <div className="footer-links">
+            <h4>Navegação</h4>
+            <ul>
+              <li><a href="#intro">Início</a></li>
+              <li><a href="#services">Serviços</a></li>
+              <li><a href="#about">Sobre Nós</a></li>
+              <li><a href="#clients">Clientes</a></li>
+              <li><a href="#contact">Contato</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-contact">
+            <h4>Contato</h4>
+            <p><strong>Email:</strong> contato@jtengenharia.com.br</p>
+            <p><strong>Telefone:</strong> (62) 3000-0000</p>
+            <p><strong>Endereço:</strong> Goiânia, GO - Brasil</p>
+            <p><strong>Horário:</strong> Seg - Sex: 08:00 - 18:00</p>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>&copy; {currentYear} JT Engenharia. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
   );
 };

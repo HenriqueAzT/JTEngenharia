@@ -1,134 +1,145 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { useState, useEffect } from 'react';
-import areiao from '../assets/areiao.jpg';
-import orion from '../assets/orion.jpg';
-import oscar from '../assets/oscar.jpg';
-import serra from '../assets/serra.jpg';
-import viaduto from '../assets/viaduto.jpg';
+import { useState } from 'react';
+import { FaPlay } from 'react-icons/fa';
+import goiania from '../assets/goiania.jpg';
 import './Hero.css';
 
 const YOUTUBE_VIDEO_ID = 'FCuvP7YPfVM';
 
 export const Hero = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
-  const goianiaImages = [areiao, orion, oscar, serra, viaduto];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % goianiaImages.length);
-    }, 5000); // Muda imagem a cada 5 segundos
-    return () => clearInterval(interval);
-  }, []);
+  const stats = [
+    { number: '10+', label: 'Anos de Experiência' },
+    { number: '500+', label: 'Laudos Emitidos' },
+    { number: '100%', label: 'Conformidade Legal' },
+  ];
 
   return (
     <section id="intro" className="hero">
-      {/* Background com carrossel de imagens */}
+      {/* Background */}
       <div className="hero-background">
-        <motion.div
-          className="background-carousel"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          style={{
-            backgroundImage: `url(${goianiaImages[currentImageIndex]})`,
-          }}
+        <div
+          className="background-image"
+          style={{ backgroundImage: `url(${goiania})` }}
         />
-        <motion.div
-          className="background-overlay"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        />
+        <div className="background-overlay" />
       </div>
 
-      {/* Indicadores de imagem */}
-      <div className="carousel-indicators">
-        {goianiaImages.map((_, index) => (
-          <motion.button
-            key={index}
-            className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
-            onClick={() => setCurrentImageIndex(index)}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          />
-        ))}
-      </div>
-
-      <motion.div
-        className="hero-content"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <motion.div className="hero-text">
+      <div className="container hero-content">
+        <div className="hero-grid">
           <motion.div
+            className="hero-text"
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           >
-            <h1>
-              <TypeAnimation
-                sequence={[
-                  'Segurança do Trabalho',
-                  1500,
-                  'Excelência Profissional',
-                  1500,
-                  'Proteção para sua Empresa',
-                  1500,
-                ]}
-                wrapper="span"
-                cursor={true}
-                repeat={Infinity}
-                style={{ color: '#dae7f8ff', fontSize: 'inherit' }}
-              />
-            </h1>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <span className="hero-subtitle">Engenharia & Segurança do Trabalho</span>
+              <h1>
+                <TypeAnimation
+                  sequence={[
+                    'Segurança para sua Empresa',
+                    2000,
+                    'Excelência em Perícias',
+                    2000,
+                    'Soluções em Engenharia',
+                    2000,
+                  ]}
+                  wrapper="span"
+                  cursor={true}
+                  repeat={Infinity}
+                />
+              </h1>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              Transformamos a segurança do trabalho em vantagem competitiva.
+              Atuamos em Goiânia e região com soluções técnicas precisas e laudos confiáveis.
+            </motion.p>
+
+            <motion.div
+              className="hero-actions"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              <button
+                className="btn-primary"
+                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+              >
+                Solicitar Orçamento
+              </button>
+              <button
+                className="btn-secondary"
+                onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })}
+              >
+                Nossos Serviços
+              </button>
+            </motion.div>
+
+            {/* Stats Cards */}
+            <div className="hero-stats">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  className="stat-card glass-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 + (index * 0.1) }}
+                >
+                  <h3>{stat.number}</h3>
+                  <p>{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+          {/* Video Section */}
+          <motion.div
+            className="hero-media"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
           >
-            Na JT Engenharia, transformamos a segurança do trabalho em uma vantagem
-            competitiva para sua empresa. Com soluções inovadoras e equipe especializada,
-            garantimos ambientes seguros e conformidade total com a legislação.
-          </motion.p>
-
-          <motion.button
-            className="cta-button"
-            whileHover={{ scale: 1.05, boxShadow: '0 8px 25px rgba(87, 128, 180, 0.4)' }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-          >
-            Começar Agora
-          </motion.button>
-        </motion.div>
-
-        <motion.div
-          className="hero-image"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <div className="video-container">
-            <iframe
-              className="youtube-player"
-              src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&controls=1`}
-              title="JT Engenharia - Segurança do Trabalho"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </motion.div>
-      </motion.div>
+            <div className="video-wrapper glass-card">
+              {!isVideoPlaying ? (
+                <div
+                  className="video-placeholder"
+                  onClick={() => setIsVideoPlaying(true)}
+                  style={{ backgroundImage: `url(${goiania})` }}
+                >
+                  <div className="play-button-overlay">
+                    <div className="play-button">
+                      <FaPlay />
+                    </div>
+                    <span>Assistir Vídeo Institucional</span>
+                  </div>
+                </div>
+              ) : (
+                <iframe
+                  className="youtube-player"
+                  src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&showinfo=0&modestbranding=1&iv_load_policy=3&controls=1&disablekb=1&fs=1`}
+                  title="JT Engenharia"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
+            </div>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 };

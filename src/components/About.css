@@ -1,126 +1,125 @@
 .about {
-  background: var(--white);
-  padding: 5rem 2rem;
+  padding: var(--section-padding);
+  background-color: #fff;
   position: relative;
   overflow: hidden;
 }
 
-.about::before {
-  content: '';
-  position: absolute;
-  bottom: -50%;
-  left: -20%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(87, 128, 180, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.about-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.about-header h2 {
-  font-size: 2.5rem;
-  color: var(--dark-text);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.about-content {
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  text-align: justify;
+.lead-text {
+  font-size: 1.25rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
 .about-content p {
-  font-size: 1.05rem;
-  color: var(--gray-text);
-  line-height: 1.8;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
+  line-height: 1.8;
 }
 
-.about-content p:last-child {
+.about-features {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.feature-icon-wrapper {
+  min-width: 50px;
+  height: 50px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+  font-size: 1.5rem;
+}
+
+.feature-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: var(--primary);
+}
+
+.feature-item p {
+  font-size: 0.9rem;
   margin-bottom: 0;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+/* Image Side */
+.about-image {
+  position: relative;
 }
 
-.feature-card {
-  background: linear-gradient(135deg, #f8fafd 0%, #e8f0fc 100%);
-  padding: 2rem;
-  border-radius: 12px;
+.image-wrapper {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0.5rem;
+  background: #fff;
+  box-shadow: var(--shadow-lg);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  display: block;
+}
+
+.experience-badge {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  transition: var(--transition);
-  border: 1px solid rgba(87, 128, 180, 0.1);
+  animation: float 3s ease-in-out infinite;
 }
 
-.feature-card:hover {
-  background: linear-gradient(135deg, #e8f0fc 0%, #f8fafd 100%);
+.experience-badge .years {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
-.feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  display: inline-block;
-}
-
-.feature-card h3 {
-  color: var(--primary-blue);
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
+.experience-badge .text {
+  font-size: 0.9rem;
   font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0.25rem;
 }
 
-.feature-card p {
-  color: var(--gray-text);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .about {
-    padding: 3rem 1rem;
-  }
-
-  .about-header h2 {
-    font-size: 2rem;
-  }
-
-  .about-content {
-    text-align: left;
-  }
-
-  .about-content p {
-    font-size: 1rem;
-  }
-
-  .features-grid {
+@media (max-width: 1024px) {
+  .about-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 3rem;
   }
 
-  .feature-card {
-    text-align: left;
-  }
-
-  .feature-icon {
-    display: block;
-    margin-bottom: 1rem;
+  .about-image {
+    order: -1;
+    /* Image first on mobile? Or maybe keep text first. Let's keep text first usually. */
+    order: 0;
   }
 }

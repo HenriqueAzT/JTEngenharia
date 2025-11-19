@@ -82,7 +82,9 @@
   font-size: 0.95rem;
   transition: var(--transition);
   color: var(--dark-text);
-  background: var(--white);
+  background: #f8fafc;
+  /* Light grey background for contrast */
+  border-color: #e2e8f0;
 }
 
 .form-group input:focus,

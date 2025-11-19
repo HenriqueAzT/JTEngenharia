@@ -1,43 +1,51 @@
 import { motion } from 'framer-motion';
+import {
+  FaHardHat,
+  FaClipboardCheck,
+  FaDraftingCompass,
+  FaBalanceScale,
+  FaChalkboardTeacher,
+  FaHandshake
+} from 'react-icons/fa';
 import './Gallery.css';
 
 export const Gallery = () => {
-  const images = [
+  const services = [
     {
       id: 1,
-      title: 'Treinamento de Segurança',
-      category: 'Treinamento',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop',
+      title: 'Segurança do Trabalho',
+      description: 'Gestão completa de SST, elaboração de laudos (LTCAT, LI, Laudo Ergonômico) e programas de prevenção.',
+      icon: <FaHardHat />,
     },
     {
       id: 2,
-      title: 'Inspeção de Equipamentos',
-      category: 'Inspeção',
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=300&fit=crop',
+      title: 'Perícias de Engenharia',
+      description: 'Assistência técnica em perícias judiciais e extrajudiciais, com emissão de pareceres técnicos fundamentados.',
+      icon: <FaBalanceScale />,
     },
     {
       id: 3,
-      title: 'Consultoria Especializada',
-      category: 'Consultoria',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop',
+      title: 'Projetos e Laudos',
+      description: 'Elaboração de projetos de combate a incêndio, laudos de inspeção predial e estrutural.',
+      icon: <FaDraftingCompass />,
     },
     {
       id: 4,
-      title: 'Análise de Riscos',
-      category: 'Análise',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop',
+      title: 'Treinamentos',
+      description: 'Capacitação de equipes com treinamentos de NRs (NR-10, NR-35, NR-33, etc.) in company ou online.',
+      icon: <FaChalkboardTeacher />,
     },
     {
       id: 5,
-      title: 'Implementação de Normas',
-      category: 'Implementação',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop',
+      title: 'Inspeções Técnicas',
+      description: 'Vistorias técnicas para identificação de patologias e não conformidades em edificações.',
+      icon: <FaClipboardCheck />,
     },
     {
       id: 6,
-      title: 'Acompanhamento Contínuo',
-      category: 'Acompanhamento',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop',
+      title: 'Consultoria Consultiva',
+      description: 'Acompanhamento contínuo para garantir a conformidade legal e a segurança do seu patrimônio.',
+      icon: <FaHandshake />,
     },
   ];
 
@@ -61,43 +69,43 @@ export const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="gallery">
-      <motion.div
-        className="gallery-container"
-        initial="hidden"
-        whileInView="visible"
-        variants={containerVariants}
-        viewport={{ once: true }}
-      >
-        <motion.div className="section-header" variants={itemVariants}>
-          <h2>Nossa Galeria</h2>
-          <p>Conheça nossos projetos e soluções em ação</p>
+    <section id="services" className="services">
+      <div className="container">
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="section-title">Nossos Serviços</h2>
+          <p>Soluções completas em Engenharia e Segurança para sua empresa</p>
         </motion.div>
 
         <motion.div
-          className="gallery-grid"
+          className="services-grid"
           variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
-          {images.map((item) => (
+          {services.map((service) => (
             <motion.div
-              key={item.id}
-              className="gallery-item"
+              key={service.id}
+              className="service-card glass-card"
               variants={itemVariants}
               whileHover={{ y: -10 }}
             >
-              <div className="gallery-image-wrapper">
-                <img src={item.image} alt={item.title} />
-                <div className="gallery-overlay">
-                  <span className="category">{item.category}</span>
-                </div>
+              <div className="service-icon">
+                {service.icon}
               </div>
-              <div className="gallery-content">
-                <h3>{item.title}</h3>
-              </div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <button className="service-link">Saiba mais</button>
             </motion.div>
           ))}
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };

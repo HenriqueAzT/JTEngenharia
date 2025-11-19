@@ -1,102 +1,92 @@
 import { motion } from 'framer-motion';
+import { FaShieldAlt, FaUserTie, FaCheckCircle, FaChartLine } from 'react-icons/fa';
 import './About.css';
 
 export const About = () => {
   const features = [
     {
       id: 1,
-      icon: '🛡️',
+      icon: <FaShieldAlt />,
       title: 'Proteção Completa',
       description: 'Soluções abrangentes de segurança para todos os tipos de empresas',
     },
     {
       id: 2,
-      icon: '👥',
+      icon: <FaUserTie />,
       title: 'Equipe Experiente',
       description: 'Profissionais altamente qualificados com anos de experiência',
     },
     {
       id: 3,
-      icon: '✓',
+      icon: <FaCheckCircle />,
       title: 'Conformidade Total',
       description: 'Garantia de cumprimento com todas as normas e regulamentações',
     },
     {
       id: 4,
-      icon: '📊',
+      icon: <FaChartLine />,
       title: 'Análise Detalhada',
       description: 'Diagnósticos precisos e soluções personalizadas para sua empresa',
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
-
   return (
     <section id="about" className="about">
-      <motion.div
-        className="about-container"
-        initial="hidden"
-        whileInView="visible"
-        variants={containerVariants}
-        viewport={{ once: true }}
-      >
-        <motion.div className="about-header" variants={itemVariants}>
-          <h2>Sobre a JT Engenharia</h2>
-        </motion.div>
+      <div className="container">
+        <div className="about-grid">
+          <motion.div
+            className="about-content"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="section-title" style={{ textAlign: 'left', left: 0, transform: 'none' }}>Sobre a JT Engenharia</h2>
+            <p className="lead-text">
+              Há mais de 10 anos garantindo a segurança e a conformidade técnica de empresas em Goiânia e região.
+            </p>
+            <p>
+              A JT Engenharia nasceu com o propósito de elevar o padrão de segurança do trabalho e perícias de engenharia.
+              Nossa missão é fornecer soluções técnicas que não apenas atendam à legislação, mas que protejam vidas e patrimônios.
+            </p>
+            <p>
+              Contamos com uma equipe multidisciplinar de engenheiros e técnicos prontos para atender demandas complexas
+              com agilidade e precisão técnica.
+            </p>
 
-        <motion.div className="about-content" variants={itemVariants}>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
-          </p>
-          <p>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
-            omnis iste natus error sit voluptatem accusantium doloremque
-            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-            veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-          </p>
-        </motion.div>
+            <div className="about-features">
+              {features.map((feature) => (
+                <div key={feature.id} className="feature-item">
+                  <div className="feature-icon-wrapper">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h4>{feature.title}</h4>
+                    <p>{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-        <motion.div
-          className="features-grid"
-          variants={containerVariants}
-        >
-          {features.map((feature) => (
-            <motion.div
-              key={feature.id}
-              className="feature-card"
-              variants={itemVariants}
-              whileHover={{ y: -5, boxShadow: '0 12px 30px rgba(87, 128, 180, 0.2)' }}
-            >
-              <div className="feature-icon">{feature.icon}</div>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
+          <motion.div
+            className="about-image"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="image-wrapper glass-card">
+              {/* Placeholder for team or office image */}
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Equipe JT Engenharia" />
+              <div className="experience-badge">
+                <span className="years">10+</span>
+                <span className="text">Anos de<br />Experiência</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 };
