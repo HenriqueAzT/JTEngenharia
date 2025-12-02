@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion';
 import {
-  FaHardHat,
-  FaClipboardCheck,
-  FaDraftingCompass,
-  FaBalanceScale,
-  FaChalkboardTeacher,
-  FaHandshake
+  FaBuilding,
+  FaTools,
+  FaBolt,
+  FaFireExtinguisher,
+  FaCloudShowersHeavy,
+  FaLayerGroup,
+  FaChargingStation,
+  FaTemperatureHigh,
+  FaFileContract,
+  FaArrowUp
 } from 'react-icons/fa';
 import './Gallery.css';
 
@@ -13,39 +17,57 @@ export const Gallery = () => {
   const services = [
     {
       id: 1,
-      title: 'Segurança do Trabalho',
-      description: 'Gestão completa de SST, elaboração de laudos (LTCAT, LI, Laudo Ergonômico) e programas de prevenção.',
-      icon: <FaHardHat />,
+      title: 'Laudos e Perícias Prediais',
+      description: 'Inspeção de fissuras, infiltrações e patologias estruturais com emissão de laudo técnico + ART/RRT.',
+      icon: <FaBuilding />,
     },
     {
       id: 2,
-      title: 'Perícias de Engenharia',
-      description: 'Assistência técnica em perícias judiciais e extrajudiciais, com emissão de pareceres técnicos fundamentados.',
-      icon: <FaBalanceScale />,
+      title: 'Consultoria de Manutenção',
+      description: 'Diagnóstico e planejamento de manutenção preventiva e corretiva para edificações e indústrias.',
+      icon: <FaTools />,
     },
     {
       id: 3,
-      title: 'Projetos e Laudos',
-      description: 'Elaboração de projetos de combate a incêndio, laudos de inspeção predial e estrutural.',
-      icon: <FaDraftingCompass />,
+      title: 'Qualidade de Energia',
+      description: 'Análise de distúrbios elétricos e inspeção completa de sistemas para evitar falhas e riscos.',
+      icon: <FaBolt />,
     },
     {
       id: 4,
-      title: 'Treinamentos',
-      description: 'Capacitação de equipes com treinamentos de NRs (NR-10, NR-35, NR-33, etc.) in company ou online.',
-      icon: <FaChalkboardTeacher />,
+      title: 'Projetos Elétricos e Incêndio',
+      description: 'Elaboração de projetos elétricos e de proteção contra incêndio (PPCI) conforme normas vigentes.',
+      icon: <FaFireExtinguisher />,
     },
     {
       id: 5,
-      title: 'Inspeções Técnicas',
-      description: 'Vistorias técnicas para identificação de patologias e não conformidades em edificações.',
-      icon: <FaClipboardCheck />,
+      title: 'SPDA, Aterramento e Solo',
+      description: 'Ensaios de SPDA, medições de aterramento e estudos de estratificação do solo para máxima segurança.',
+      icon: <FaCloudShowersHeavy />,
     },
     {
-      id: 6,
-      title: 'Consultoria Consultiva',
-      description: 'Acompanhamento contínuo para garantir a conformidade legal e a segurança do seu patrimônio.',
-      icon: <FaHandshake />,
+      id: 7,
+      title: 'Carregadores Veiculares',
+      description: 'Viabilidade e projeto para instalação de carregadores de veículos elétricos (CVE).',
+      icon: <FaChargingStation />,
+    },
+    {
+      id: 8,
+      title: 'Inspeção Termográfica',
+      description: 'Detecção de falhas e sobrecargas em quadros elétricos e fachadas com câmera termográfica.',
+      icon: <FaTemperatureHigh />,
+    },
+    {
+      id: 9,
+      title: 'Aprovação de CERCON',
+      description: 'Assessoria completa para obtenção e renovação do Certificado de Conformidade (Bombeiros).',
+      icon: <FaFileContract />,
+    },
+    {
+      id: 10,
+      title: 'Inspeção de Elevadores',
+      description: 'Vistoria técnica elétrica e de segurança em elevadores de passageiros.',
+      icon: <FaArrowUp />,
     },
   ];
 
@@ -101,7 +123,6 @@ export const Gallery = () => {
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <button className="service-link">Saiba mais</button>
             </motion.div>
           ))}
         </motion.div>

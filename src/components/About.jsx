@@ -1,32 +1,32 @@
 import { motion } from 'framer-motion';
-import { FaShieldAlt, FaUserTie, FaCheckCircle, FaChartLine } from 'react-icons/fa';
+import { FaUsers, FaHandshake, FaFileSignature, FaClipboardList } from 'react-icons/fa';
 import './About.css';
 
 export const About = () => {
   const features = [
     {
       id: 1,
-      icon: <FaShieldAlt />,
-      title: 'Proteção Completa',
-      description: 'Soluções abrangentes de segurança para todos os tipos de empresas',
+      icon: <FaUsers />,
+      title: 'Equipe Multidisciplinar',
+      description: 'Engenheiros civis, elétricos, mecânicos e de segurança prontos para atender demandas complexas.',
     },
     {
       id: 2,
-      icon: <FaUserTie />,
-      title: 'Equipe Experiente',
-      description: 'Profissionais altamente qualificados com anos de experiência',
+      icon: <FaHandshake />,
+      title: 'Atendimento Personalizado',
+      description: 'Soluções adaptadas para condomínios, indústrias, comércios e agronegócio.',
     },
     {
       id: 3,
-      icon: <FaCheckCircle />,
-      title: 'Conformidade Total',
-      description: 'Garantia de cumprimento com todas as normas e regulamentações',
+      icon: <FaFileSignature />,
+      title: 'Documentação Técnica',
+      description: 'Relatórios profissionalizados com ART/RRT e total conformidade com normas vigentes.',
     },
     {
       id: 4,
-      icon: <FaChartLine />,
-      title: 'Análise Detalhada',
-      description: 'Diagnósticos precisos e soluções personalizadas para sua empresa',
+      icon: <FaClipboardList />,
+      title: 'Suporte Completo',
+      description: 'Do diagnóstico e inspeção até o projeto, execução e aprovação documental.',
     },
   ];
 
@@ -43,15 +43,16 @@ export const About = () => {
           >
             <h2 className="section-title" style={{ textAlign: 'left', left: 0, transform: 'none' }}>Sobre a JT Engenharia</h2>
             <p className="lead-text">
-              Há mais de 10 anos garantindo a segurança e a conformidade técnica de empresas em Goiânia e região.
+              Excelência técnica e compromisso com a segurança em cada detalhe.
             </p>
             <p>
-              A JT Engenharia nasceu com o propósito de elevar o padrão de segurança do trabalho e perícias de engenharia.
-              Nossa missão é fornecer soluções técnicas que não apenas atendam à legislação, mas que protejam vidas e patrimônios.
+              A JT Engenharia se destaca pela atuação de uma equipe multidisciplinar altamente qualificada.
+              Nossa missão é fornecer soluções técnicas precisas que garantam não apenas a conformidade legal,
+              mas a segurança efetiva de vidas e patrimônios.
             </p>
             <p>
-              Contamos com uma equipe multidisciplinar de engenheiros e técnicos prontos para atender demandas complexas
-              com agilidade e precisão técnica.
+              Oferecemos um suporte completo, desde a inspeção inicial até a aprovação final junto aos órgãos competentes,
+              sempre com documentação técnica rigorosa e atendimento personalizado para cada tipo de empreendimento.
             </p>
 
             <div className="about-features">

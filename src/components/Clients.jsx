@@ -1,14 +1,22 @@
 import { motion } from 'framer-motion';
+import mcdonalds from '../assets/mcdonalds-logo.png';
+import rihappy from '../assets/rihappy-logo.png';
+import makro from '../assets/Makro-logo.png';
+import livreBuritis from '../assets/Livre-Buritis-Logo.png';
+import flexAcademia from '../assets/flex-academia-logo.png';
+import drogariasPacheco from '../assets/drogarias-pacheco-logo.png';
+import contempleMarista from '../assets/contemple-marista-logo.jpg';
 import './Clients.css';
 
 export const Clients = () => {
   const clients = [
-    { id: 1, name: 'Construtora A', logo: 'CA' },
-    { id: 2, name: 'Indústria B', logo: 'IB' },
-    { id: 3, name: 'Comércio C', logo: 'CC' },
-    { id: 4, name: 'Engenharia D', logo: 'ED' },
-    { id: 5, name: 'Logística E', logo: 'LE' },
-    { id: 6, name: 'Serviços F', logo: 'SF' },
+    { id: 1, name: 'McDonald\'s', logo: mcdonalds },
+    { id: 2, name: 'RiHappy', logo: rihappy },
+    { id: 3, name: 'Makro', logo: makro },
+    { id: 4, name: 'Residencial Livre Buritis', logo: livreBuritis },
+    { id: 5, name: 'Flex Academia', logo: flexAcademia },
+    { id: 6, name: 'Drogarias Pacheco', logo: drogariasPacheco },
+    { id: 7, name: 'Contemple Marista', logo: contempleMarista },
   ];
 
   return (
@@ -38,8 +46,8 @@ export const Clients = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="client-logo-placeholder">
-                {client.logo}
+              <div className={`client-logo-wrapper ${client.name === 'Makro' ? 'makro-logo' : ''}`}>
+                <img src={client.logo} alt={client.name} className="client-logo" />
               </div>
               <p>{client.name}</p>
             </motion.div>
