@@ -13,8 +13,8 @@ export const Footer = () => {
           <div className="footer-brand">
             <img src={logo} alt="JT Engenharia" className="footer-logo" />
             <p>
-              Soluções completas em Engenharia de Segurança do Trabalho e Perícias.
-              Compromisso com a técnica e a vida.
+              Soluções completas em Engenharia Diagnóstica, Elétrica e Perícias.
+              Compromisso com a técnica e a qualidade.
             </p>
             <div className="social-links">
               <a href="#" aria-label="Facebook"><FaFacebook /></a>

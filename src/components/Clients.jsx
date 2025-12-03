@@ -31,7 +31,7 @@ export const Clients = () => {
         >
           <h2 className="section-title">Clientes Parceiros</h2>
           <p>
-            Empresas que confiam na nossa expertise para garantir a segurança
+            Algumas das empresas que confiam na nossa expertise para garantir a segurança
           </p>
         </motion.div>
 

@@ -1,4 +1,4 @@
-import { Header, Hero, Gallery, Clients, About, Contact, Footer } from './components'
+import { Header, Hero, Gallery, PhotoGallery, Clients, About, Contact, Footer } from './components'
 import './App.css'
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
       <Header />
       <Hero />
       <Gallery />
+      <PhotoGallery />
       <Clients />
       <About />
       <Contact />

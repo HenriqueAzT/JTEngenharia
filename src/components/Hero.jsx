@@ -41,15 +41,15 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="hero-subtitle">Engenharia & Segurança do Trabalho</span>
+              <span className="hero-subtitle">Engenharia Diagnóstica & Perícias</span>
               <h1>
                 <TypeAnimation
                   sequence={[
-                    'Segurança para sua Empresa',
+                    'Soluções Técnicas Precisas',
                     2000,
                     'Excelência em Perícias',
                     2000,
-                    'Soluções em Engenharia',
+                    'Engenharia Consultiva',
                     2000,
                   ]}
                   wrapper="span"
@@ -64,8 +64,8 @@ export const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              Transformamos a segurança do trabalho em vantagem competitiva.
-              Atuamos em Goiânia e região com soluções técnicas precisas e laudos confiáveis.
+              Transformamos desafios técnicos em soluções eficientes.
+              Atuamos em Goiânia e região com laudos confiáveis e consultoria especializada.
             </motion.p>
 
             <motion.div
