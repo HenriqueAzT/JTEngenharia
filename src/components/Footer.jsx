@@ -37,9 +37,9 @@ export const Footer = () => {
 
           <div className="footer-contact">
             <h4>Contato</h4>
-            <p><strong>Email:</strong> contato@jtengenharia.com.br</p>
-            <p><strong>Telefone:</strong> (62) 3000-0000</p>
-            <p><strong>Endereço:</strong> Goiânia, GO - Brasil</p>
+            <p><strong>Email:</strong> Jtosta.eng@gmail.com</p>
+            <p><strong>Telefone:</strong> (62) 9 8521-2084</p>
+            {/* <p><strong>Endereço:</strong> Goiânia, GO - Brasil</p> */}
             <p><strong>Horário:</strong> Seg - Sex: 08:00 - 18:00</p>
           </div>
         </div>

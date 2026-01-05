@@ -8,7 +8,7 @@ function App() {
       <Hero />
       <Gallery />
       <PhotoGallery />
-      <Clients />
+      {/* <Clients /> */}
       <About />
       <Contact />
       <Footer />
