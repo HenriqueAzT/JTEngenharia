@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaUsers, FaHandshake, FaFileSignature, FaClipboardList } from 'react-icons/fa';
 import './About.css';
+import imagemJTEng from '../assets/imagemJTEng.png';
 
 export const About = () => {
   const features = [
@@ -20,13 +21,13 @@ export const About = () => {
       id: 3,
       icon: <FaFileSignature />,
       title: 'Documentação Técnica',
-      description: 'Relatórios profissionalizados com ART/RRT e total conformidade com normas vigentes.',
+      description: 'Relatórios profissionalizados com ART e total conformidade com normas vigentes.',
     },
     {
       id: 4,
       icon: <FaClipboardList />,
       title: 'Suporte Completo',
-      description: 'Do diagnóstico e inspeção até o projeto, execução e aprovação documental.',
+      description: 'Do diagnóstico e inspeção até o projeto.',
     },
   ];
 
@@ -79,7 +80,7 @@ export const About = () => {
           >
             <div className="image-wrapper glass-card">
               {/* Placeholder for team or office image */}
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Equipe JT Engenharia" />
+              <img src={imagemJTEng} alt="Equipe JT Engenharia" />
               <div className="experience-badge">
                 <span className="years">10+</span>
                 <span className="text">Anos de<br />Experiência</span>

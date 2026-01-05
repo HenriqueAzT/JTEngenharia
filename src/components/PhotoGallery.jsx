@@ -12,7 +12,7 @@ import img6 from '../assets/galeria/IMG-20211125-WA0050.jpg';
 import img7 from '../assets/galeria/IMG-20211125-WA0054.jpg';
 import img8 from '../assets/galeria/IMG-20220311-WA0019.jpg';
 import img9 from '../assets/galeria/IMG-20220318-WA0097.jpg';
-import img10 from '../assets/galeria/IMG-20220729-WA0016.jpg';
+// import img10 from '../assets/galeria/IMG-20220729-WA0016.jpg';
 import img11 from '../assets/galeria/IMG-20221026-WA0097.jpg';
 import img12 from '../assets/galeria/IMG-20221206-WA0060.jpg';
 import img13 from '../assets/galeria/IMG-20221220-WA0000.jpg';
@@ -25,7 +25,7 @@ import img19 from '../assets/galeria/IMG_20211030_081948.jpg';
 import img20 from '../assets/galeria/IMG_20220901_104708.jpg';
 
 const images = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
+    img1, img2, img3, img4, img5, img6, img7, img8, img9,
     img11, img12, img13, img14, img15, img16, img17, img18, img19, img20
 ];
 
@@ -85,7 +85,7 @@ export const PhotoGallery = () => {
                     viewport={{ once: true }}
                 >
                     <h2 className="section-title">Nossa Galeria</h2>
-                    <p>Confira alguns de nossos trabalhos e projetos realizados</p>
+                    <p>Confira algumas das inspeções realizadas</p>
                 </motion.div>
 
                 <div className="carousel-container">

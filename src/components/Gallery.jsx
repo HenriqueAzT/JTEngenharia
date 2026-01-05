@@ -18,7 +18,7 @@ export const Gallery = () => {
     {
       id: 1,
       title: 'Laudos e Perícias Prediais',
-      description: 'Inspeção de fissuras, infiltrações e patologias estruturais com emissão de laudo técnico + ART/RRT.',
+      description: 'Inspeção de fissuras, infiltrações e patologias estruturais com emissão de laudo técnico + ART.',
       icon: <FaBuilding />,
     },
     {
@@ -101,7 +101,7 @@ export const Gallery = () => {
           viewport={{ once: true }}
         >
           <h2 className="section-title">Nossos Serviços</h2>
-          <p>Soluções completas em Engenharia e Segurança para sua empresa</p>
+          <p>Soluções completas em Engenharia diagnóstica e projetos</p>
         </motion.div>
 
         <motion.div

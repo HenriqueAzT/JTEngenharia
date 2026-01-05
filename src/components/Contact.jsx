@@ -89,7 +89,7 @@ export const Contact = () => {
       >
         <motion.div className="section-header" variants={itemVariants}>
           <h2>Entre em Contato</h2>
-          <p>Fale conosco e descubra como podemos ajudar sua empresa</p>
+          <p>Fale conosco e descubra como podemos ajudar</p>
         </motion.div>
 
         <div className="contact-content">
