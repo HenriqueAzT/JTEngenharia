@@ -17,10 +17,10 @@ export const Footer = () => {
               Compromisso com a técnica e a qualidade.
             </p>
             <div className="social-links">
-              <a href="#" aria-label="Facebook"><FaFacebook /></a>
-              <a href="#" aria-label="Instagram"><FaInstagram /></a>
-              <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
-              <a href="#" aria-label="WhatsApp"><FaWhatsapp /></a>
+              {/* <a href="#" aria-label="Facebook"><FaFacebook /></a> */}
+              <a href="https://www.instagram.com/jtosta_engenheiro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram"><FaInstagram /></a>
+              {/* <a href="#" aria-label="LinkedIn"><FaLinkedin /></a> */}
+              <a href="https://wa.me/5562985212084" target="_blank" aria-label="WhatsApp"><FaWhatsapp /></a>
             </div>
           </div>
 
