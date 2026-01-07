@@ -45,7 +45,7 @@ export const Header = () => {
   const links = [
     { id: 'intro', label: 'Início' },
     { id: 'gallery', label: 'Galeria' },
-    { id: 'clients', label: 'Clientes' },
+    // { id: 'clients', label: 'Clientes' },
     { id: 'about', label: 'Sobre' },
     { id: 'contact', label: 'Contato' },
   ];
